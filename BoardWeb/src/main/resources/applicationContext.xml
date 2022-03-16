@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="tv" class="polymorphism.SamsungTV" scope="prototype"> 
+	<!-- SamsungTV에서 생성자 2개 있는거 가져오시오 -->
+	<!-- public SamsungTV(Speaker speaker, int price) {... -->
+		<constructor-arg index="0" ref="apple"></constructor-arg>
+		<!-- speaker는 인터페이스. 객체생성 불가능 상속받은 자식꺼로 만들기.. apple과 sony가 상속 받았음 -->
+		<!-- ref="apple" apple이라는 객체가 speaker로 들어가는 것  -->
+		<!-- Speaker speaker=new AppleSpeaker(); 랑 같은 거임.. -->
+		<constructor-arg index="1" value="270000"></constructor-arg>
+	</bean>
+	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
+	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+</beans>

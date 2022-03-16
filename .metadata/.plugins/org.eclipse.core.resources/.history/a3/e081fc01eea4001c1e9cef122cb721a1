@@ -1,0 +1,38 @@
+package polymorphism;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class TVUser {
+	public static void main(String[] args) {
+		//다형성 이용 전
+//		SamsungTV tv=new SamsungTV();
+//		tv.powerOn();
+//		tv.volumeUp();
+//		tv.volumeDown();
+//		tv.powerOff();
+		
+//		LgTV tv=new LgTV();
+//		tv.powerOn();
+//		tv.volumeUp();
+//		tv.volumeDown();
+//		tv.powerOff();
+		
+		//다형성 이용 후
+//		TV tv=new SamsungTV();
+//		tv.powerOn();
+//		tv.volumeUp();
+//		tv.volumeDown();
+//		tv.powerOff();
+		
+//		TV tv=new LgTV();
+		
+		//디자인 패턴 이용
+//		BeanFactory factory=new BeanFactory();
+//		TV tv=(TV) factory.getBean("lg");
+//		tv.powerOn();
+//		tv.volumeUp();
+//		tv.volumeDown();
+//		tv.powerOff();
+	}
+}
