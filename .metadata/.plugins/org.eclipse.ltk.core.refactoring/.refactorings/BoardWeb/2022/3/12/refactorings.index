@@ -2,3 +2,14 @@
 1647395096335	Delete elements
 1647398927501	Delete element
 1647409989450	Delete element
+1647485676547	Encapsulate field 'addressList'
+1647505076841	Delete element
+1647505132692	Extract interface 'BoardService'
+1647505144385	Move compilation unit
+1647506736618	Delete element
+1647506775115	Rename type 'BoardServieClient'
+1647584251178	Move compilation unit
+1647584702850	Rename package 'com.springbook.bix.user'
+1647585998684	Move package
+1647593684593	Extract interface 'testdao'
+1647593716846	Delete element

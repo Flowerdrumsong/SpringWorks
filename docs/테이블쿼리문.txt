@@ -1,0 +1,36 @@
+mysql -uroot -p
+1111
+
+create database swork charset utf8;
+
+use swork
+
+
+create table users(
+ id varchar(8) primary key,
+ password varchar(8),
+ name varchar(20),
+ role varchar(5)
+)default charset=utf8;
+
+
+drop table board;
+
+create table board(
+ seq int(5) AUTO_INCREMENT primary key,
+ title varchar(200),
+ writer varchar(20),
+ content varchar(2000),
+ regdate date default NOW(),
+ cnt int(5) default 0
+)default charset=utf8;
+
+
+insert into users values ('test', 'test', '관리자', 'Admin');
+insert into users values ('user1', 'user1', '홍길동', 'User');
+
+insert into board (title , writer ,content ) values ('가입인사', '관리자', '잘 부탁드립니다...');
+
+select * from users;
+select * from board;
+

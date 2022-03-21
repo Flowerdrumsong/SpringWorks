@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+<!-- 		비즈니스 컴포넌트 실습 -->
+		<context:component-scan base-package="com.springbook.biz"></context:component-scan>
+		<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+		<!--  p178 before-->
+<!-- 		<bean id="before" class="com.springbook.biz.common.BeforeAdvice"></bean> -->
+<!-- 		<aop:config> -->
+<!-- 			<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut> -->
+<!-- 			<aop:aspect ref="before"> -->
+<!-- 				<aop:before pointcut-ref="allPointcut" method="beforeLog"></aop:before> -->
+<!-- 			</aop:aspect> -->
+<!-- 		</aop:config> -->
+		
+		<!--  p180 after returning-->
+<!-- 		<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean> -->
+<!-- 		<aop:config> -->
+<!-- 			<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"></aop:pointcut> -->
+<!-- 			<aop:aspect ref="afterReturning"> -->
+<!-- 				<aop:after-returning pointcut-ref="getPointcut" method="afterLog"/> -->
+<!-- 			</aop:aspect> -->
+<!-- 		</aop:config> -->
+
+			<!--  p193 after 어드바이스 -->
+<!-- 		<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean> -->
+<!-- 		<aop:config> -->
+<!-- 			<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"></aop:pointcut> -->
+<!-- 			<aop:aspect ref="afterReturning"> -->
+<!-- 				<aop:after-returning pointcut-ref="getPointcut" method="afterLog" returning="returnObj"/> -->
+<!-- 			</aop:aspect> -->
+<!-- 		</aop:config> -->
+		
+		<!--  p182 after throwing-->
+
+
+		<!-- client에서 inserBoard 실행 할 때 발생한다-->
+
+<!-- 		p184 after (finally)-->
+<!-- 			<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice"></bean> -->
+<!-- 			<aop:config> -->
+<!-- 				<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut> -->
+<!-- 				<aop:aspect ref="afterThrowing"> -->
+<!-- 					<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog" throwing="exceptObj" /> -->
+<!-- 				</aop:aspect> -->
+<!-- 			</aop:config> -->
+			<!-- throwing의 매개변수와 메서드의 매개변수명이 동일해야 함--> 
+
+<!--		p186 around-->
+<!-- 			<bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean> -->
+<!-- 			<aop:config> -->
+<!-- 				<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut> -->
+<!-- 				<aop:aspect ref="around"> -->
+<!-- 					<aop:around pointcut-ref="allPointcut" method="aroundLog"></aop:around> -->
+<!-- 				</aop:aspect> -->
+<!-- 			</aop:config> -->
+		
+<!-- 	<bean id="tv" class="polymorphism.SamsungTV" scope="prototype" p:speaker-ref="sony" p:price="2700000" lazy-init="true"> -->
+<!-- 		<property name="speaker" ref="apple"></property>  -->
+		<!-- setSpeaker(apple) -->
+<!-- 		<property name="price" value="2700000"></property>  -->
+	<!-- SamsungTV에서 생성자 2개 있는거 가져오시오 -->
+	<!-- public SamsungTV(Speaker speaker, int price) {... -->
+<!-- 		<constructor-arg index="0" ref="apple"></constructor-arg> -->
+		<!-- speaker는 인터페이스. 객체생성 불가능 상속받은 자식꺼로 만들기.. apple과 sony가 상속 받았음 -->
+		<!-- ref="apple" apple이라는 객체가 speaker로 들어가는 것  -->
+		<!-- Speaker speaker=new AppleSpeaker(); 랑 같은 거임.. -->
+<!-- 		<constructor-arg index="1" value="270000"></constructor-arg> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="sony" class="polymorphism.SonySpeaker"></bean> -->
+<!-- 	<bean id="apple" class="polymorphism.AppleSpeaker"></bean> -->
+</beans>
